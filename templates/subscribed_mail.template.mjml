@@ -1,0 +1,143 @@
+<!-- email.template.mjml -->
+<mjml>
+  <mj-head>
+    <mj-font
+      name="Poppins"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
+    />
+
+    <mj-attributes>
+      <mj-all font-family="Poppins" />
+    </mj-attributes>
+  </mj-head>
+
+  <mj-body background-color="#12151D">
+    <mj-section>
+      <mj-column>
+        <mj-raw>
+          <div
+            style="
+              width: 40px;
+              margin: 50px auto 5px auto;
+              background-color: #6510d3;
+              text-align: center;
+              padding: 20px;
+              border-radius: 50%;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              style="display: inline-block; color: #ffff"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M29 9v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9m26 0a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2m26 0l-11.862 8.212a2 2 0 0 1-2.276 0L3 9"
+              />
+            </svg>
+          </div>
+        </mj-raw>
+
+        <mj-text
+          font-size="25px"
+          font-weight="700"
+          color="#FFFFFF"
+          align="center"
+          >Subscription Successful</mj-text
+        >
+
+        <mj-spacer height="30px" />
+        <mj-text
+          font-size="20px"
+          font-weight="400"
+          color="#B8B9BB"
+          align="center"
+        >
+        Welcome to the dolphjs community! From time to time, we'll send you info on what's going on in the community, latest updates and features. Please, feel free to send an email to this address if you have any questions.
+        </mj-text>
+        <mj-spacer height="50px" />
+
+        <mj-button
+          background-color="#6510D3"
+          color="#FFFFFF"
+          font-weight="500"
+          font-size="25px"
+          align="center"
+          border-radius="20px"
+          width="250px"
+          height="70px"
+          href="{{url}}"
+        >
+          Go to Dolphjs Website</mj-button
+        >
+      </mj-column>
+    </mj-section>
+    <mj-spacer height="150px" />
+    <mj-section background-color="#303841" padding="30px 20px">
+      <mj-wrapper
+        padding="0 10px"
+        full-width="true"
+        css-class="footer-flex-container"
+      >
+        <!-- First Flex Container -->
+        <mj-column width="100%">
+          <mj-social
+            font-size="18px"
+            icon-size="30px"
+            mode="horizontal"
+            align="center"
+          >
+            <mj-social-element name="facebook" href="https://"/>
+            <mj-social-element name="twitter" href="https://"/>
+            <mj-social-element name="instagram" href="https://"/>
+          </mj-social>
+        </mj-column>
+
+        <!-- Second Flex Container -->
+        <mj-column width="100%">
+          <mj-text
+            font-size="14px"
+            font-weight="400"
+            color="#FFFFFF"
+            padding-bottom="5px"
+            align="center"
+          >
+            dolph@dolphjs.io
+          </mj-text>
+          <mj-text
+            font-size="12px"
+            font-weight="400"
+            color="#B8B9BB"
+            align="center"
+          >
+          Lagos, Nigeria
+          </mj-text>
+          <mj-text
+            font-size="12px"
+            font-weight="400"
+            color="#B8B9BB"
+            align="center"
+          >
+          © 2024 The Dolphjs Team
+          </mj-text>
+        </mj-column>
+
+        <!-- Third Flex Container with Image -->
+        <mj-column width="100%">
+          <mj-image
+            width="80px"
+            src="https://asset.cloudinary.com/owablog/9be87698c60528d6a0d268082af11314"
+            alt="Dolphjs Logo"
+            align="center"
+          />
+        </mj-column>
+      </mj-wrapper>
+    </mj-section>
+  </mj-body>
+</mjml>

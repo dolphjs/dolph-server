@@ -1,0 +1,14 @@
+port: 3300    
+database:
+  mongo:
+    url: sensitive
+middleware:
+  cors:
+    activate: true
+    origin: ''
+    methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+jsonLimit: 20mb
