@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { compile } from "handlebars";
 import { resolve } from "path";
-import * as mjml from "mjml";
+import mjml2Html from "mjml";
 import * as nodemailer from "nodemailer";
 
 export const sendMail = (
@@ -29,15 +29,15 @@ export const sendMail = (
 
 const convertFromMjmlToHtml = (path: string) => {
   const pathToMail = readFileSync(resolve(__dirname, path)).toString();
-  return compile(mjml(pathToMail).html);
+  return compile(mjml2Html(pathToMail).html);
 };
 
 export const sendSubscribedMail = async (to: string, url: string) => {
   return sendMail(
     to,
     "Welcome To The Dolphjs Community",
-    convertFromMjmlToHtml(
-      "../../../../templates/subscribed_mail.template.mjml"
-    )({ url })
+    convertFromMjmlToHtml("../../../templates/subscribed_mail.template.mjml")({
+      url,
+    })
   );
 };

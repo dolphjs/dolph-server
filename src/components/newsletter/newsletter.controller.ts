@@ -5,15 +5,16 @@ import {
   DRequest,
   DResponse,
   InternalServerErrorException,
+  TryCatchAsyncDec,
 } from "@dolphjs/dolph/common";
 import { Get, Post, Route } from "@dolphjs/dolph/decorators";
 import { NewsletterService } from "./newsletter.service";
 
+const newsLetterService = new NewsletterService();
+
 @Route("newsletter")
 export class NewsletterController extends DolphControllerHandler<Dolph> {
-  constructor(
-    private newsLetterService: NewsletterService = new NewsletterService()
-  ) {
+  constructor() {
     super();
   }
 
@@ -26,8 +27,9 @@ export class NewsletterController extends DolphControllerHandler<Dolph> {
   }
 
   @Post()
+  @TryCatchAsyncDec
   async add(req: DRequest, res: DResponse) {
-    if (this.newsLetterService.addEmail(req.body))
+    if (!(await newsLetterService.addEmail(req.body)))
       throw new InternalServerErrorException("cannot add user to newsletter");
 
     SuccessResponse({ res });

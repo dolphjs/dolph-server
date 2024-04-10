@@ -15,7 +15,6 @@ export class NewsletterService extends DolphServiceHandler<Dolph> {
     super("newsletterservice");
   }
 
-  @TryCatchAsyncDec
   async addEmail(dto: NewsLetterDto): Promise<SentMessageInfo> {
     await this.newsletterModel.create({ email: dto.email, source: dto.source });
     return sendSubscribedMail(dto.email, "https://dolph.io");
