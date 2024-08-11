@@ -19,6 +19,10 @@ const NewsletterSchema = new Schema(
       required: true,
       enum: ["docs", "waitlist", "website"],
     },
+    unsubscribed: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

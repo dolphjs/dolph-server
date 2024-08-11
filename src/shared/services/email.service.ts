@@ -18,7 +18,7 @@ export const sendMail = (
   });
 
   const mailOptions = {
-    from: "dolph@dolphjs.io",
+    from: "hello@dolphjs.com<Dolph>",
     to,
     subject,
     html,
@@ -32,12 +32,17 @@ const convertFromMjmlToHtml = (path: string) => {
   return compile(mjml2Html(pathToMail).html);
 };
 
-export const sendSubscribedMail = async (to: string, url: string) => {
+export const sendSubscribedMail = async (
+  to: string,
+  url: string,
+  url_two: string
+) => {
   return sendMail(
     to,
-    "Welcome To The Dolphjs Community",
+    "Welcome To The DolphJS Community",
     convertFromMjmlToHtml("../../../templates/subscribed_mail.template.mjml")({
       url,
+      url_two,
     })
   );
 };

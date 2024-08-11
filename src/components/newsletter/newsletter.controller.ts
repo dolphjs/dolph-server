@@ -7,13 +7,12 @@ import {
   InternalServerErrorException,
   TryCatchAsyncDec,
 } from "@dolphjs/dolph/common";
-import { Get, Post, Route } from "@dolphjs/dolph/decorators";
+import { Get, Post, Render, Route } from "@dolphjs/dolph/decorators";
 import { NewsletterService } from "./newsletter.service";
-
-const newsLetterService = new NewsletterService();
 
 @Route("newsletter")
 export class NewsletterController extends DolphControllerHandler<Dolph> {
+  private NewsletterService: NewsletterService;
   constructor() {
     super();
   }
@@ -26,12 +25,26 @@ export class NewsletterController extends DolphControllerHandler<Dolph> {
     });
   }
 
+  @Get("")
+  async getSubscribedMails(req: DRequest, res: DResponse) {
+    const mails = await this.NewsletterService.getSubscribedEmails();
+
+    SuccessResponse({ res, body: mails });
+  }
+
   @Post()
   @TryCatchAsyncDec
   async add(req: DRequest, res: DResponse) {
-    if (!(await newsLetterService.addEmail(req.body)))
-      throw new InternalServerErrorException("cannot add user to newsletter");
+    if (!(await this.NewsletterService.addEmail(req.body)))
+      throw new InternalServerErrorException("cannot subscribe to newsletter");
 
     SuccessResponse({ res });
+  }
+
+  @Get("unsubscribe/:email")
+  @Render("unsubscribed")
+  async unsubscribe(req: DRequest, res: DResponse) {
+    await this.NewsletterService.unsubscribe(req.params.email);
+    return;
   }
 }

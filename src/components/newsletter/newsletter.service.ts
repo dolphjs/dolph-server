@@ -17,6 +17,20 @@ export class NewsletterService extends DolphServiceHandler<Dolph> {
 
   async addEmail(dto: NewsLetterDto): Promise<SentMessageInfo> {
     await this.newsletterModel.create({ email: dto.email, source: dto.source });
-    return sendSubscribedMail(dto.email, "https://dolph.io");
+    return sendSubscribedMail(
+      dto.email,
+      "https://docs.dolphjs.com",
+      "https://docs.dolphjs.com"
+    );
+  }
+
+  async getSubscribedEmails() {
+    return this.newsletterModel
+      .find({ unsubscribed: false })
+      .select(["createdAt", "email", "source"]);
+  }
+
+  async unsubscribe(email: string) {
+    await this.newsletterModel.updateOne({ email }, { unsubscribed: true });
   }
 }
