@@ -26,6 +26,7 @@ export class NewsletterController extends DolphControllerHandler<Dolph> {
   }
 
   @Get("")
+  @TryCatchAsyncDec
   async getSubscribedMails(req: DRequest, res: DResponse) {
     const mails = await this.NewsletterService.getSubscribedEmails();
 
