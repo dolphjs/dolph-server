@@ -33,7 +33,7 @@ export class NewsletterService extends DolphServiceHandler<Dolph> {
     return sendSubscribedMail(
       dto.email,
       "https://dolphjs.com",
-      "https://docs.dolphjs.com"
+      `http://13.40.31.183:3300/newsletter/unsubscribe/${user.email}`
     );
   }
 
