@@ -5,10 +5,15 @@ database:
 middleware:
   cors:
     activate: true
-    origin: ''
+    origin: '*'
     methods:
       - GET
       - POST
       - PUT
       - DELETE
-jsonLimit: 20mb
+    allowedHeaders:
+      - 'Content-Type'
+      - 'Authorization'
+      - 'Access-Control-Allow-Origin'
+      - 'Access-Control-Allow-Credentials'
+jsonLimit: 5mb
