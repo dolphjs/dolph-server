@@ -16,10 +16,23 @@ export class NewsletterService extends DolphServiceHandler<Dolph> {
   }
 
   async addEmail(dto: NewsLetterDto): Promise<SentMessageInfo> {
-    await this.newsletterModel.create({ email: dto.email, source: dto.source });
+    const user = await this.newsletterModel.findOne({ email: dto.email });
+
+    if (!user) {
+      await this.newsletterModel.create({
+        email: dto.email,
+        source: dto.source,
+      });
+    } else if (user.unsubscribed) {
+      await this.newsletterModel.updateOne(
+        { email: dto.email },
+        { unsubscribed: false }
+      );
+    }
+
     return sendSubscribedMail(
       dto.email,
-      "https://docs.dolphjs.com",
+      "https://dolphjs.com",
       "https://docs.dolphjs.com"
     );
   }

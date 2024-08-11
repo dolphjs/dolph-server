@@ -15,7 +15,7 @@
     <mj-section>
       <mj-column>
         <mj-text
-          font-size="20px"
+          font-size="23px"
           font-weight="700"
           color="#FFFFFF"
           align="center"
@@ -25,12 +25,19 @@
 
         <mj-spacer height="30px" />
         <mj-text
-          font-size="18px"
-          font-weight="400"
+          font-size="19px"
+          font-weight="500"
           color="#ccc"
           align="center"
         >
-        Welcome to the Dolph community! From time to time, we'll send you info on what's going on in the community, latest updates and features. Please, feel free to send an email to this address if you have any questions.
+       Welcome to the Dolph Community!
+        </mj-text>
+        <mj-text
+          font-size="18px"
+          font-weight="400"
+          color="#ccc"
+          align="center">
+        We're excited to have you on board. Keep an eye on your inbox for updates on the latest features, community news, and everything happening within Dolph. If you ever have questions or need assistance, don't hesitate to reach out to us at this email address—we're here to help!
         </mj-text>
         <mj-spacer height="50px" />
 
@@ -40,9 +47,9 @@
           font-weight="500"
           font-size="18px"
           align="center"
-          border-radius="20px"
+          border-radius="10px"
           max-width="350px"
-          height="70px"
+          height="60px"
           href="{{url}}"
         >
           Visit Website</mj-button
@@ -50,7 +57,7 @@
       </mj-column>
     </mj-section>
     <mj-spacer height="100px" />
-    <mj-section background-color="#002" padding="30px 20px">
+    <mj-section background-color="#002" padding="30px 20px"    border-radius="10px">
       <mj-wrapper
         padding="0 10px"
         full-width="true"

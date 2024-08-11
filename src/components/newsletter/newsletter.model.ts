@@ -3,6 +3,7 @@ import { Schema, Document, model } from "mongoose";
 export interface INewsletter extends Document {
   email: string;
   source: string;
+  unsubscribed: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -13,6 +14,7 @@ const NewsletterSchema = new Schema(
       type: String,
       required: true,
       minlength: 3,
+      unique: true,
     },
     source: {
       type: String,
