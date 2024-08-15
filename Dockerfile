@@ -19,4 +19,6 @@ RUN npm run build
 
 EXPOSE 3300
 
-CMD [ "npm", "run", "dev:start" ] # would update back to `start` when cli is fixed
+# CMD [ "npm", "start" ]
+
+CMD [ "dolph", "watch" ] # would update back to `start` when cli is fixed
