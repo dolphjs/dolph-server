@@ -19,4 +19,4 @@ RUN npm run build
 
 EXPOSE 3300
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "dev:start" ] # would update back to `start` when cli is fixed
