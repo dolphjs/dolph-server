@@ -5,15 +5,14 @@ database:
 middleware:
   cors:
     activate: true
-    origin: '*'
+    origin: 'https://dolphjs.com'
     methods:
       - GET
       - POST
       - PUT
+      - PATCH
       - DELETE
     allowedHeaders:
       - 'Content-Type'
       - 'Authorization'
-      - 'Access-Control-Allow-Origin'
-      - 'Access-Control-Allow-Credentials'
 jsonLimit: 5mb
