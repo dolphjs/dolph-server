@@ -12,6 +12,7 @@ middleware:
       - PUT
       - PATCH
       - DELETE
+      - OPTIONS
     allowedHeaders:
       - 'Content-Type'
       - 'Authorization'
