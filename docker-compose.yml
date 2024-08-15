@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    build: ./
+    container_name: dolph-server
+    ports:
+      - 3300:3300
+    networks:
+      - dolph_network
+
+networks:
+  dolph_network:
+    driver: bridge
