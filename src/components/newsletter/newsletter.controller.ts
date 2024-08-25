@@ -36,17 +36,6 @@ export class NewsletterController extends DolphControllerHandler<Dolph> {
   @Post()
   @TryCatchAsyncDec
   async add(req: DRequest, res: DResponse) {
-    console.log("======= body =======");
-    console.log(req.body);
-    console.log("======= body =======");
-
-    console.log("======= params =======");
-    console.log(req.params);
-    console.log("======= params =======");
-
-    console.log("======= query =======");
-    console.log(req.query);
-    console.log("======= query =======");
     if (!(await this.NewsletterService.addEmail(req.body)))
       throw new InternalServerErrorException("cannot subscribe to newsletter");
 
