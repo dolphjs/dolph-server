@@ -11,7 +11,7 @@ ENV NODE_ENV=${NODE_ENV}
 COPY package.json ./
 COPY yarn.lock ./
 
-RUN npm install --legacy-peer-deps --include=dev && npm install --global @dolphjs/cli@1.2.4
+RUN npm install --legacy-peer-deps --include=dev && npm install --global @dolphjs/cli
 
 COPY . /usr/src/dolph-server
 
