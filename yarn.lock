@@ -56,10 +56,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@dolphjs/dolph@1.3.7":
-  version "1.3.7"
-  resolved "https://registry.yarnpkg.com/@dolphjs/dolph/-/dolph-1.3.7.tgz#55af643b569ee3fe82aeb15fc0747ece9c150f58"
-  integrity sha512-tVxfg8YNVQvmQFDy4NXkqcK/ZRoW/ZP6Rk3L5rcV+9fYrc441OfbyB20pidZTX6vUPrwH8zH57WatpL1Pe2PhQ==
+"@dolphjs/dolph@^1.3.16":
+  version "1.3.16"
+  resolved "https://registry.yarnpkg.com/@dolphjs/dolph/-/dolph-1.3.16.tgz#e9a9e606528eb67ef0112752e89e5b230bd8b60a"
+  integrity sha512-StM7SRcTMLVJXOY5cLGAxOaxsN80f+9cZojf+h23nHY0ga0Nbel3NhJ9bHuu9p16wr2udQ1Mwm8TVwDeeV52Eg==
   dependencies:
     bcryptjs "^2.4.3"
     class-transformer "^0.5.1"
