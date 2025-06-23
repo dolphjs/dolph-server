@@ -5,7 +5,9 @@ database:
 middleware:
   cors:
     activate: true
-    origin: 'https://dolphjs.com'
+    origin:
+      - 'http://localhost:4200'
+      - 'https://dolphjs.com'
     methods:
       - GET
       - POST
@@ -17,3 +19,4 @@ middleware:
       - 'Content-Type'
       - 'Authorization'
 jsonLimit: 5mb
+globalExceptionFilter: true 
