@@ -30,8 +30,6 @@ export class NewsletterService extends DolphServiceHandler<Dolph> {
       );
     }
 
-    console.log(dto);
-
     return sendSubscribedMail(
       dto.email,
       "https://dolphjs.com",
